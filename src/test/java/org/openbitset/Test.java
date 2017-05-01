@@ -21,11 +21,22 @@ public class Test {
             System.out.println(intBitSet.get(i));
         }*/
 
-        ByteBitSet byteBitSet = new ByteBitSet();
+        /*ByteBitSet byteBitSet = new ByteBitSet();
         byteBitSet.set(1, true);
         byteBitSet.set(7, true);
         for (int i = 0; i < 8; i++) {
             System.out.println(byteBitSet.get(i));
+        }*/
+
+        LongBitSet longBitSet = new LongBitSet();
+        longBitSet.set(1, true);
+        longBitSet.set(2, false);
+        longBitSet.set(2, true);
+        longBitSet.set(31, true);
+        longBitSet.set(32, true);
+        longBitSet.set(63, true);
+        for (int i = 0; i < 64; i++) {
+            System.out.println(longBitSet.get(i) + ":" + i);
         }
 
     }
