@@ -11,24 +11,24 @@ public class ShortBitSet {
 
     short bits = 0;
 
-    public void set(int bitIndex, boolean value) {
-        if (bitIndex > 15)
+    public void set(int index, boolean value) {
+        if (index > 15)
             throw new IllegalArgumentException("Position can not be greater than 15.");
-        if (get(bitIndex))
-            bits = (short) (bits & (value ? 1 << bitIndex : 0 << bitIndex));
-        bits = (short) (bits | (value ? 1 << bitIndex : 0 << bitIndex));
+        if (get(index))
+            bits = (short) (bits & (value ? 1 << index : 0 << index));
+        bits = (short) (bits | (value ? 1 << index : 0 << index));
     }
 
-    public boolean get(int bitIndex) {
-        if (bitIndex > 15)
+    public boolean get(int index) {
+        if (index > 15)
             throw new IllegalArgumentException("Position can not be greater than 15.");
 
         short bitsLocal = bits;
         for (int i = 0; i < 16; i++) {
-            if (bitIndex == i) continue;
-            bitsLocal = (short) (bitsLocal & 1 << bitIndex);
+            if (index == i) continue;
+            bitsLocal = (short) (bitsLocal & 1 << index);
         }
-        return (bitsLocal & 1 << bitIndex) != 0;
+        return (bitsLocal & 1 << index) != 0;
     }
 
 }
