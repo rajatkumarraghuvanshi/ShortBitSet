@@ -21,5 +21,12 @@ public class Test {
             System.out.println(intBitSet.get(i));
         }*/
 
+        ByteBitSet byteBitSet = new ByteBitSet();
+        byteBitSet.set(1, true);
+        byteBitSet.set(7, true);
+        for (int i = 0; i < 8; i++) {
+            System.out.println(byteBitSet.get(i));
+        }
+
     }
 }

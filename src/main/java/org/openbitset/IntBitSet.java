@@ -14,7 +14,7 @@ public class IntBitSet {
         if (index > 31)
             throw new IllegalArgumentException("Position can not be greater than 31.");
         if (get(index))
-            bits = (short) (bits & (value ? 1 << index : 0 << index));
+            bits = (bits & (value ? 1 << index : 0 << index));
         bits = (bits | (value ? 1 << index : 0 << index));
     }
 
